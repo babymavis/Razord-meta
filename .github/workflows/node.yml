@@ -27,9 +27,9 @@ jobs:
     #     build_dir: dist
     #     fqdn: clash.metacubex.one
     - name: upload result
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v2
         with:
           name: my-artifact
-          path: ${{ github.workspace }}/your_dictionary
+          path: ${{ github.workspace }}/my-artifact/dist
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
