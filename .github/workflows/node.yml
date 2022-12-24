@@ -30,7 +30,7 @@ jobs:
     #     build_dir: dist
     #     fqdn: clash.metacubex.one
     - name: upload result
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: my-artifact
           path: AgileConfig.Server.UI/react-ui-antd/dist/
