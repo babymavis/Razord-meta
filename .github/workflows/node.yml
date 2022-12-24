@@ -20,11 +20,16 @@ jobs:
       run: |
         pnpm install
         pnpm build
-    - name: Deploy
-      uses: crazy-max/ghaction-github-pages@v2
-      with:
-        target_branch: gh-pages
-        build_dir: dist
-        fqdn: clash.metacubex.one
+    # - name: Deploy
+    #   uses: crazy-max/ghaction-github-pages@v2
+    #   with:
+    #     target_branch: gh-pages
+    #     build_dir: dist
+    #     fqdn: clash.metacubex.one
+    - name: upload result
+        uses: actions/upload-artifact@v1
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/your_dictionary
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
