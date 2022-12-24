@@ -5,10 +5,8 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: AgileConfig.Server.UI/react-ui-antd
     steps:
+    - run: mkdir -p dist/artifact
     - name: Checkout Dashboard code
       uses: actions/checkout@v3
     - uses: pnpm/action-setup@v2
@@ -33,6 +31,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: my-artifact
-        path: AgileConfig.Server.UI/react-ui-antd/dist/
+        path: dist/artifact/
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
